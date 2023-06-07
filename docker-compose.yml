@@ -1,0 +1,21 @@
+services:
+  bienes-raices-db:
+    image: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+    volumes:
+      - mysql-data:/var/lib/mysql
+  bienes-raices-app:
+    depends_on:
+      - bienes-raices-db
+    build: .
+    ports:
+      - "3001:3000"
+    links:
+      - bienes-raices-db
+
+volumes:
+  mysql-data:
+

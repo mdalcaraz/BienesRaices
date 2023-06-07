@@ -1,0 +1,17 @@
+header.bg-indigo-600.p-4
+    .container.mx-auto.flex.justify-between.items-center
+        a(href="/") 
+            h1.text-2xl.text-white.font-extrabold.text-center Bienes
+                span.font-normal Raices
+        
+        nav(class="my-5 text-sm sm:flex sm:items-center sm:gap-3 font-bold text-white hidden")
+            a(href="/mis-propiedades")  Mis Propiedades
+            form(action='/auth/cerrar-sesion' method='POST')
+                input(type="submit" class="bg-indigo-800 py-2 px-10 rounded-lg" value="Cerrar Sesion")  
+                input(type="hidden" name="_csrf" value=csrfToken)
+        
+        div(class="sm:hidden  text-white flex  flex-col font-semibold text-s space-y-2 space-x-5" )
+            a(href="/mis-propiedades")  Mis Propiedades
+            form(action='/auth/cerrar-sesion' method='POST')
+                input(type="submit" class="bg-indigo-800 py-1 px-2 rounded-lg" value="Cerrar Sesion")  
+                input(type="hidden" name="_csrf" value=csrfToken)
