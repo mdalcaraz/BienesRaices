@@ -13,7 +13,7 @@ const emailRegistro = async (datos) => {
 
     //Envio del mail
     await transport.sendMail({
-        from: 'BienesRaices.com',
+        from: 'bienesraices@malcaraz.tech',
         to: email,
         subject: 'Confirma tu cuenta en BienesRaices.com',
         text: 'Confirma tu cuenta en BienesRaices.com',
@@ -21,7 +21,7 @@ const emailRegistro = async (datos) => {
             <p>Hola ${nombre}, comprueba tu cuenta en bienesRaices.com</p>
 
             <p>Tu cuenta ya esta lista, solo debes confirmarla en el siguiente enlace:
-            <a href="${process.env.BACKEND_URL}:${process.env.PORT ?? 3000}/auth/confirmar/${token}">Confirmar Cuenta</a></p>
+            <a href="https://bienesraices.malcaraz.tech/auth/confirmar/${token}">Confirmar Cuenta</a></p>
 
             <p>Si tu no creaste esta cuenta, puedes ignorar el mensaje</p>
         `
@@ -42,7 +42,7 @@ const emailOlvidePassword = async (datos) => {
 
     //Envio del mail
     await transport.sendMail({
-        from: 'BienesRaices.com',
+        from: 'bienesraices@malcaraz.tech',
         to: email,
         subject: 'Recupera tu acceso a BienesRaices',
         text: 'Recupera tu acceso a BienesRaices',
@@ -50,7 +50,7 @@ const emailOlvidePassword = async (datos) => {
             <p>Hola ${nombre}! Has solicitado restablecer tu contraseña en BienesRaices.com</p>
 
             <p>Abre el siguiente enlace para generar una nueva contraseña
-            <a href="${process.env.BACKEND_URL}:${process.env.PORT ?? 3000}/auth/olvide-password/${token}">Resetear Contraseña</a></p>
+            <a href="https://bienesraices.malcaraz.tech/auth/olvide-password/${token}">Resetear Contraseña</a></p>
 
             <p>Si tu no hiciste esta petición, puedes ignorar el mensaje</p>
         `
